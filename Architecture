@@ -217,7 +217,6 @@ class OCE_Spatiotemporal_atten_sm(nn.Module):
 if __name__ == "__main__":
     dummy_input = torch.randn(1, 2, 50, 50, 400, 384)
 
-    print("Building OCE_Spatiotemporal_atten_sm...")
     model = OCE_Spatiotemporal_atten_sm(chunk_size=64)
     model.eval()
 
@@ -227,7 +226,6 @@ if __name__ == "__main__":
 
     total_params = sum(p.numel() for p in model.parameters())
 
-    print("Forward test completed successfully!")
     print(f"Input shape: {dummy_input.shape}")
     print(f"Output shape: {out.shape} (expected: [1, 1, 50, 50])")
     print(
